@@ -8,39 +8,32 @@ export default function ContactSideBar() {
     //Recibe como parametro el contexto que queremos consumir
     //Una vez consumido me traera el valor del value del contexto
     const { contacts, favorite_name } = useContext(ContactsContext)
-  return (
-    <div>
-        <h2>WhatsApp Clone</h2>
-        <h3>Me cae muy bien {favorite_name}</h3>
-        <div>
-            {
-                contacts.map(
-                    (contact ) => {
-                        return (
-                            <Link 
-                                to={`/contact/${contact.id}`}
-                                key={contact.id}
-                                
-                            >
-                                <img 
-                                    src={contact.profile_picture} 
-                                    alt={contact.name} 
-                                    style={
-                                        {
-                                            width: '200px'
-                                        }
-                                    }
-                                />
-                                <h3>{contact.name}</h3>
-                                <span>{contact.last_time_connection}</span>
-                                <br />
-                                <hr />
-                            </Link>
-                        )
-                    }
-                )
-            }
-        </div>
-    </div>
-  )
+    return (
+        <aside className="sidebar">
+            <div className="sidebar-header">
+                <h2 className="app-title">WhatsApp Clone</h2>
+                <h3 className="favorite">Me cae muy bien {favorite_name}</h3>
+            </div>
+
+            <nav className="contact-list">
+                {contacts.map((contact) => {
+                    const lastMsg = contact.messages && contact.messages.length ? contact.messages[contact.messages.length - 1].text : ''
+                    return (
+                        <Link to={`/contact/${contact.id}`} key={contact.id} className="contact-link">
+                            <div className="contact-item">
+                                <img src={contact.profile_picture} alt={contact.name} className="avatar" />
+                                <div className="contact-meta">
+                                    <div className="contact-row">
+                                        <span className="contact-name">{contact.name}</span>
+                                        <span className="contact-time">{contact.last_connection}</span>
+                                    </div>
+                                    <div className="contact-last">{lastMsg}</div>
+                                </div>
+                            </div>
+                        </Link>
+                    )
+                })}
+            </nav>
+        </aside>
+    )
 }

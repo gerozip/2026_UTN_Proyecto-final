@@ -40,3 +40,67 @@
 .read-the-docs {
   color: #888;
 }
+
+/* WhatsApp-like styles */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: #e5ddd5; /* chat background */
+}
+
+.sidebar {
+  width: 320px;
+  background: #075e54; /* WhatsApp green */
+  color: #fff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar-header {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.app-title { margin: 0; font-size: 1.25rem; }
+.favorite { margin: 0; font-size: 0.9rem; color: #dbeae6 }
+
+.contact-list { padding: 8px; }
+.contact-link { text-decoration: none; color: inherit; }
+.contact-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+}
+.contact-item:hover { background: rgba(255,255,255,0.03); }
+.avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.contact-meta { flex: 1; min-width: 0; }
+.contact-row { display:flex; justify-content: space-between; align-items:center; }
+.contact-name { font-weight: 600; display:block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.contact-time { font-size: 0.75rem; opacity: 0.9 }
+.contact-last { font-size: 0.85rem; color: rgba(255,255,255,0.85); overflow: hidden; text-overflow: ellipsis; white-space: nowrap }
+
+.chat-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #ece5dd;
+}
+.chat-header { padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.06); background: linear-gradient(90deg,#075e54,#128c7e); color: #fff }
+.chat-header h2 { margin:0 }
+
+.messages { flex: 1; padding: 16px; overflow-y: auto; display: flex; flex-direction: column; gap: 12px }
+.message-row { display:flex }
+.message-row.me { justify-content: flex-end }
+.bubble { max-width: 70%; padding: 10px 12px; border-radius: 8px; position: relative; }
+.bubble-them { background: #fff; color: #000; border-top-left-radius: 4px }
+.bubble-me { background: #dcf8c6; color: #000; border-top-right-radius: 4px }
+.msg-time { display:block; font-size: 0.7rem; opacity: 0.6; margin-top:6px }
+
+.message-form { display:flex; gap:8px; padding:12px; border-top:1px solid rgba(0,0,0,0.06); background:#f0efeb }
+.message-input { flex:1; resize:none; padding:10px; border-radius: 20px; border:1px solid #ccc; min-height:44px }
+.send-button { background:#25d366; color:#fff; border:none; padding:10px 16px; border-radius: 20px }
+
+@media (max-width: 800px) {
+  .sidebar { display:none }
+}
