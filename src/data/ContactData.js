@@ -104,33 +104,26 @@ const contacts = [
     },
     {
         id: 5,
-        name: 'Ana Martínez',
+        name: 'El Bananero',
         phone: '1145678902',
-        email: 'ana.martinez@example.com',
+        email: 'bana.sape@example.com',
         last_connection: 'Hace 3 horas',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Ana',
+        profile_picture: 'https://media.mdzol.com/p/7598dfbe3dbce4662914cc1829cee2a9/adjuntos/373/imagenes/001/103/0001103474/760x0/smart/el-bananero-presenta-su-nuevo-show-cancelame-esta-foto-gentileza-el-bananero.png',
         messages: [
             {
                 id: 1,
-                text: 'Te mando el proyecto actualizado',
+                text: 'Que haces, loquita',
                 send_by_me: true,
                 created_at: '2024-06-02T12:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Perfecto! Lo reviso ahora',
+                text: 'Loquita estaras vos, SAPEEEE',
                 send_by_me: false,
                 created_at: '2024-06-02T12:10:00Z',
                 is_read: true
             },
-            {
-                id: 3,
-                text: 'Muy bien, solo un pequeño ajuste en la línea 45',
-                send_by_me: false,
-                created_at: '2024-06-02T12:15:00Z',
-                is_read: true
-            }
         ]
     },
     {
