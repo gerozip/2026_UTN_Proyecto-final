@@ -49,29 +49,29 @@ const contacts = [
     },
     {
         id: 3,
-        name: 'María García',
+        name: 'Michael Jackson',
         phone: '1123456789',
-        email: 'maria.garcia@example.com',
+        email: 'michael.jackson@example.com',
         last_connection: 'Hace 30 minutos',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Maria',
+        profile_picture: 'https://i2.wp.com/people.com/thmb/kH5WPADak70KeWwlyIOA4Lbz4Ng=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(709x499:711x501)/michael-jackson-210aa5866c7d4dd58de8e3af57fe919a.jpg',
         messages: [
             {
                 id: 1,
-                text: 'Hola! ¿Cómo estuvo tu día?',
+                text: 'Hola! ¿Cómo estuvo tu día? HEE-HEE',
                 send_by_me: false,
                 created_at: '2024-06-02T14:30:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Todo bien, ¿y el tuyo?',
+                text: 'Todo bien, ¿y el tuyo? HEE-HEE',
                 send_by_me: true,
                 created_at: '2024-06-02T14:35:00Z',
                 is_read: true
             },
             {
                 id: 3,
-                text: 'Excelente, gracias por preguntar!',
+                text: 'Excelente, gracias por preguntar! HEE-HEE',
                 send_by_me: false,
                 created_at: '2024-06-02T14:40:00Z',
                 is_read: true
@@ -80,22 +80,22 @@ const contacts = [
     },
     {
         id: 4,
-        name: 'Carlos López',
+        name: 'Ricardo Iorio',
         phone: '1134567801',
-        email: 'carlos.lopez@example.com',
+        email: 'ricardo.iorio@example.com',
         last_connection: 'Hace 1 hora',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos',
+        profile_picture: 'https://assets.dev-filo.dift.io/img/2017/07/13/19990016_738228829694010_8391623111574881389_n_x1x_sq.jpg',
         messages: [
             {
                 id: 1,
-                text: '¿Nos vemos a las 7?',
+                text: 'OID MORTALES, EL GRITO SAGRAAAAAAAADO',
                 send_by_me: false,
                 created_at: '2024-06-02T15:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Dale, en la esquina de siempre',
+                text: 'IORIO, NO PUEDE SER SOS VOS',
                 send_by_me: true,
                 created_at: '2024-06-02T15:05:00Z',
                 is_read: true
