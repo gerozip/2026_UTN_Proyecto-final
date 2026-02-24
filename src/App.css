@@ -259,42 +259,63 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 12px
+  gap: 12px;
+  width: 100%;
 }
 
 .message-row {
-  display: flex
+  display: flex;
+  width: 100%;
 }
 
 .message-row.me {
-  justify-content: flex-end
+  justify-content: flex-end;
 }
 
 .bubble {
-  max-width: 70%;
+  max-width: 60%;
   padding: 10px 12px;
   border-radius: 8px;
   position: relative;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
 }
 
 .bubble-them {
   background: #fff;
   color: #000;
-  border-top-left-radius: 4px
+  border-top-left-radius: 4px;
+  direction: ltr;
+  text-align: left;
 }
 
 .bubble-me {
   background: #dcf8c6;
   color: #000;
-  border-top-right-radius: 4px
+  border-top-right-radius: 4px;
+  direction: rtl;
+  text-align: right;
 }
 
 .msg-time {
   display: block;
-  align-items: baseline;
   font-size: 0.7rem;
   opacity: 0.6;
-  margin-top: 6px
+  margin-top: 6px;
+}
+
+.bubble-them .msg-time {
+  align-self: flex-start;
+  text-align: left;
+  direction: ltr;
+}
+
+.bubble-me .msg-time {
+  align-self: flex-start;
+  text-align: left;
+  direction: ltr;
 }
 
 .message-form {
