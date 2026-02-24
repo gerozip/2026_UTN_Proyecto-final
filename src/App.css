@@ -165,8 +165,8 @@
 }
 
 .chat-header {
-  padding: 12px;
-  background: linear-gradient(to bottom, #075e54, #ece5dd);
+  padding: 20px;
+  background: linear-gradient(90deg, #075e54, #128c7e);
   color: #fff;
   border-radius: 12px 12px 0px 0px;
 }
@@ -174,8 +174,9 @@
 .chat-header-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
+  flex: 1;
 }
 
 .chat-header-avatar {
@@ -186,26 +187,29 @@
 }
 
 .chat-header-info {
-  flex: 1;
-  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
 }
 
 .chat-header-info h2 {
   margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.1rem;
+  color: #fff;
 }
 
 .chat-header-status {
-  margin: 0;
   font-size: 0.75rem;
   opacity: 0.8;
+  color: #fff;
 }
 
 .chat-header-actions {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: auto;
 }
 
 .header-btn {
