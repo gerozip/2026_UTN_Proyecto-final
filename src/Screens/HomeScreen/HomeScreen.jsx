@@ -3,7 +3,7 @@ import ContactSideBar from '../../Components/ContactSideBar/ContactSideBar'
 
 export default function HomeScreen() {
   return (
-    <div>
+    <div className="app-container">
         <ContactSideBar />
     </div>
   )
