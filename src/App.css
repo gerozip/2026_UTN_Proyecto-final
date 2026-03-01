@@ -54,6 +54,7 @@
   background: #e5ddd5;;
   gap: 12px;
   padding: 12px;
+  box-sizing: border-box;
 }
 
 .sidebar {
@@ -96,7 +97,7 @@
 .contact-item {
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
   padding: 10px;
   border-radius: 8px;
 }
@@ -116,12 +117,15 @@
 .contact-meta {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .contact-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .contact-name {
@@ -141,13 +145,39 @@
 
 .contact-last {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   font-size: 0.85rem;
   color: rgb(7,94,84);
   overflow: hidden;
+  gap: 6px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.contact-last span {
+  overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap
-  
+  white-space: nowrap;
+  flex: 1;
+  text-align: left;
+}
+
+.contact-pin-btn {
+  background: none;
+  border: none;
+  color: rgb(7,94,84);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  padding: 0;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.contact-pin-btn:hover {
+  color: rgb(5, 50, 40);
 }
 
 .chat-area {
@@ -156,6 +186,28 @@
   flex-direction: column;
   background: #ece5dd;
   overflow: hidden;
+  border-radius: 12px;
+}
+
+.empty-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: #888;
+  text-align: center;
+}
+
+.empty-chat-content h1 {
+  font-size: 1.8rem;
+  color: #555;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.empty-chat-content p {
+  font-size: 1.1rem;
+  color: #888;
 }
 
 .chat-view {
@@ -169,6 +221,9 @@
   background: linear-gradient(90deg, #075e54, #128c7e);
   color: #fff;
   border-radius: 12px 12px 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .chat-header-content {
@@ -176,7 +231,16 @@
   align-items: center;
   justify-content: flex-start;
   gap: 16px;
-  flex: 1;
+  flex: 0;
+  width: fit-content;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.chat-header-content:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .chat-header-avatar {
@@ -189,7 +253,6 @@
 .chat-header-info {
   display: flex;
   flex-direction: column;
-  gap: 4px;
   align-items: flex-start;
 }
 
@@ -197,6 +260,8 @@
   margin: 0;
   font-size: 1.1rem;
   color: #fff;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .chat-header-status {
@@ -208,8 +273,8 @@
 .chat-header-actions {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 8px;
-  margin-left: auto;
 }
 
 .header-btn {
@@ -219,9 +284,11 @@
   font-size: 1.2rem;
   cursor: pointer;
   padding: 8px;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
+  width: 40px;
+  height: 40px;
   justify-content: center;
   transition: background-color 0.2s;
 }
@@ -298,27 +365,281 @@
   background: #dcf8c6;
   color: #000;
   border-top-right-radius: 4px;
-  direction: rtl;
+  direction: ltr;
   text-align: right;
 }
 
 .msg-time {
-  display: block;
   font-size: 0.7rem;
   opacity: 0.6;
-  margin-top: 6px;
 }
 
 .bubble-them .msg-time {
-  align-self: flex-start;
   text-align: left;
   direction: ltr;
 }
 
 .bubble-me .msg-time {
-  align-self: flex-start;
+  text-align: right;
+  direction: rtl;
+}
+
+.msg-footer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  justify-content: flex-end;
+}
+
+.msg-time {
+  font-size: 0.7rem;
+  opacity: 0.6;
+}
+
+.msg-status-check {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-left: 2px;
+}
+
+.msg-status-check.read {
+  color: #34a7c1;
+  opacity: 1;
+  font-weight: bold;
+}
+
+.bubble-me .msg-footer {
+  justify-content: flex-end;
+}
+
+.message-arrow-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px 8px;
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+}
+
+.bubble-them .message-arrow-btn {
+  background: #fff;
+  color: #333;
+}
+
+.bubble-me .message-arrow-btn {
+  background: #dcf8c6;
+  color: #333;
+}
+
+.bubble:hover .message-arrow-btn,
+.bubble.menu-open .message-arrow-btn {
+  opacity: 1;
+  pointer-events: auto;
+  animation: slideInFromRight 0.3s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.message-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-width: 180px;
+  margin-top: 8px;
+  animation: slideInMenu 0.3s ease-out;
+}
+
+.message-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.2s;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.message-menu-item:last-child {
+  border-bottom: none;
+}
+
+.message-menu-item:hover {
+  background-color: #f5f5f5;
+}
+
+.message-menu-item:nth-child(1):hover {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.message-menu-item:nth-child(1):hover .message-menu-icon {
+  color: #1976d2;
+}
+
+.message-menu-item:nth-child(2):hover {
+  background-color: #fffde7;
+  color: #f57f17;
+}
+
+.message-menu-item:nth-child(2):hover .message-menu-icon {
+  color: #f57f17;
+}
+
+.message-menu-item:nth-child(3):hover {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.message-menu-item:nth-child(3):hover .message-menu-icon {
+  color: #c62828;
+}
+
+.message-menu-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  min-width: 24px;
+}
+
+@keyframes slideInMenu {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.msg-forwarded {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  color: #666;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.msg-highlighted-icon {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-size: 0.8rem;
+}
+
+.forward-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.forward-modal {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 40px rgba(0, 0, 0, 0.2);
+}
+
+.forward-modal h3 {
+  margin: 0 0 16px 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.forward-contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.forward-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border: none;
+  background: #f5f5f5;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
   text-align: left;
-  direction: ltr;
+}
+
+.forward-contact-item:hover {
+  background: #e5e5e5;
+}
+
+.forward-contact-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.forward-contact-item span {
+  color: #333;
+  font-weight: 500;
+}
+
+.forward-close-btn {
+  width: 100%;
+  padding: 10px;
+  background: #075e54;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background-color 0.2s;
+}
+
+.forward-close-btn:hover {
+  background: #05483f;
 }
 
 .message-form {
@@ -326,7 +647,7 @@
   align-items: center;
   gap: 8px;
   padding: 12px;
-  background: linear-gradient(to top, #075e54, #ece5dd);
+  background: linear-gradient(90deg, #075e54, #128c7e);
   border-radius: 0px 0px 12px 12px;
 }
 
@@ -376,6 +697,6 @@
 
 @media (max-width: 800px) {
   .sidebar {
-    display: none
+    display: none;
   }
 }

@@ -1,77 +1,113 @@
 const contacts = [
     {
         id: 1,
-        name: 'Darth Vader',
+        name: 'Miguel Ángel',
         phone: '123456789',
-        email: 'geronimo@example.com',
+        email: 'miguel.angel@example.com',
         last_connection: 'Hace 2 horas',
-        profile_picture: 'https://media.revistagq.com/photos/62a0a996223a33e985e4d59a/1:1/w_900,h_900,c_limit/1072434_110615-cc-Darth-Vader-Thumb.jpg',
+        profile_picture: 'https://ui-avatars.com/api/?name=MA&background=567BCD&color=ffffff&size=200',
+        is_pinned: true,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [2],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Holaaaaaa',
+                text: 'Hola, ¿todo bien?',
                 send_by_me: true,
                 created_at: '2024-06-01T10:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: '*respira profundamente* Hola Gerónimo, ¿cómo estás? *vuelve a respirar profundamente*',
+                text: 'Sí, todo perfecto. ¿Y vos qué tal?',
                 send_by_me: false,
                 created_at: '2024-06-01T10:05:00Z',
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'Bien, trabajando en unos proyectos',
+                send_by_me: true,
+                created_at: '2024-06-01T10:10:00Z',
+                is_read: true
+            },
+            {
+                id: 4,
+                text: 'Excelente, cualquier cosa me cuentas',
+                send_by_me: false,
+                created_at: '2024-06-01T10:15:00Z',
                 is_read: true
             }
         ]
     },
     {
         id: 2,
-        name: 'Among Us',
+        name: 'Amatista Russo',
         phone: '123976789',
-        email: 'geronimo@example.com',
+        email: 'amatista.russo@example.com',
         last_connection: 'Hace 5 horas',
-        profile_picture: 'https://i.pinimg.com/originals/7e/4f/f2/7e4ff250698c20b2e10ab47e58f399c6.jpg',
+        profile_picture: 'https://ui-avatars.com/api/?name=AR&background=E91E63&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Que onda',
+                text: 'Hola! Cómo estás?',
                 send_by_me: true,
                 created_at: '2024-06-01T10:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Tu sanja redonda',
+                text: 'Muy bien! ¿Vos?',
                 send_by_me: false,
                 created_at: '2024-06-01T10:05:00Z',
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'Yo también bien, gracias por preguntar',
+                send_by_me: true,
+                created_at: '2024-06-01T10:10:00Z',
                 is_read: true
             }
         ]
     },
     {
         id: 3,
-        name: 'Michael Jackson',
+        name: 'Mike Dean',
         phone: '1123456789',
-        email: 'michael.jackson@example.com',
+        email: 'mike.dean@example.com',
         last_connection: 'Hace 30 minutos',
-        profile_picture: 'https://i2.wp.com/people.com/thmb/kH5WPADak70KeWwlyIOA4Lbz4Ng=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(709x499:711x501)/michael-jackson-210aa5866c7d4dd58de8e3af57fe919a.jpg',
+        profile_picture: 'https://ui-avatars.com/api/?name=MD&background=FF9800&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Hola! ¿Cómo estuvo tu día? HEE-HEE',
+                text: 'Hola! ¿Cómo estuvo tu día?',
                 send_by_me: false,
                 created_at: '2024-06-02T14:30:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Todo bien, ¿y el tuyo? HEE-HEE',
+                text: 'Todo bien, bastante productivo',
                 send_by_me: true,
                 created_at: '2024-06-02T14:35:00Z',
                 is_read: true
             },
             {
                 id: 3,
-                text: 'Excelente, gracias por preguntar! HEE-HEE',
+                text: 'Que bueno! Yo también logré avanzar bastante',
                 send_by_me: false,
                 created_at: '2024-06-02T14:40:00Z',
                 is_read: true
@@ -84,46 +120,70 @@ const contacts = [
         phone: '1134567801',
         email: 'ricardo.iorio@example.com',
         last_connection: 'Hace 1 hora',
-        profile_picture: 'https://assets.dev-filo.dift.io/img/2017/07/13/19990016_738228829694010_8391623111574881389_n_x1x_sq.jpg',
+        profile_picture: 'https://ui-avatars.com/api/?name=RI&background=9C27B0&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'OID MORTALES, EL GRITO SAGRAAAAAAAADO',
+                text: 'Che, ¿viste el partido?',
                 send_by_me: false,
                 created_at: '2024-06-02T15:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'IORIO, NO PUEDE SER SOS VOS',
+                text: 'Sí! Fue increíble, ¿no?',
                 send_by_me: true,
                 created_at: '2024-06-02T15:05:00Z',
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'Totalmente, qué gol el del final',
+                send_by_me: false,
+                created_at: '2024-06-02T15:10:00Z',
                 is_read: true
             }
         ]
     },
     {
         id: 5,
-        name: 'El Bananero',
+        name: 'Benito Benavidez',
         phone: '1145678902',
-        email: 'bana.sape@example.com',
+        email: 'benito.benavidez@example.com',
         last_connection: 'Hace 3 horas',
-        profile_picture: 'https://media.mdzol.com/p/7598dfbe3dbce4662914cc1829cee2a9/adjuntos/373/imagenes/001/103/0001103474/760x0/smart/el-bananero-presenta-su-nuevo-show-cancelame-esta-foto-gentileza-el-bananero.png',
+        profile_picture: 'https://ui-avatars.com/api/?name=BB&background=4CAF50&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Que haces, loquita',
+                text: 'Ey! ¿Qué tal todo?',
                 send_by_me: true,
                 created_at: '2024-06-02T12:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Loquita estaras vos, SAPEEEE',
+                text: 'Ey! Muy bien, ¿vos?',
                 send_by_me: false,
                 created_at: '2024-06-02T12:10:00Z',
                 is_read: true
             },
+            {
+                id: 3,
+                text: 'De maravilla! Conseguí las entradas para el show',
+                send_by_me: true,
+                created_at: '2024-06-02T12:15:00Z',
+                is_read: true
+            }
         ]
     },
     {
@@ -132,20 +192,32 @@ const contacts = [
         phone: '1156789003',
         email: 'diego.fernandez@example.com',
         last_connection: 'Hace 45 minutos',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Diego',
+        profile_picture: 'https://ui-avatars.com/api/?name=DF&background=2196F3&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Hey! Seguís en la comunidad?',
-                send_by_me: false,
+                text: 'Hola Diego, ¿me pasas esos archivos?',
+                send_by_me: true,
                 created_at: '2024-06-02T15:30:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Claro que sí! Vos también?',
-                send_by_me: true,
+                text: 'Claro, te los envío en un momento',
+                send_by_me: false,
                 created_at: '2024-06-02T15:35:00Z',
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'Ok, gracias!',
+                send_by_me: true,
+                created_at: '2024-06-02T15:40:00Z',
                 is_read: true
             }
         ]
@@ -156,25 +228,30 @@ const contacts = [
         phone: '1167890104',
         email: 'lucia.rodriguez@example.com',
         last_connection: 'Hace 2 horas',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Lucia',
+        profile_picture: 'https://ui-avatars.com/api/?name=LR&background=F44336&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: '¡Hola! ¿Viste el último video?',
+                text: 'Hola! ¿Viste que subieron las notas?',
                 send_by_me: false,
                 created_at: '2024-06-02T13:45:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'No, ¿cuál es? Pasame el link',
+                text: 'Sí acabo de verlas, muy bien!',
                 send_by_me: true,
                 created_at: '2024-06-02T13:50:00Z',
                 is_read: true
             },
             {
                 id: 3,
-                text: 'Te lo envío por correo',
+                text: 'Verdad? Me alegra mucho por vos',
                 send_by_me: false,
                 created_at: '2024-06-02T13:55:00Z',
                 is_read: true
@@ -187,26 +264,31 @@ const contacts = [
         phone: '1178901205',
         email: 'pablo.sanchez@example.com',
         last_connection: 'Hace 4 horas',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Pablo',
+        profile_picture: 'https://ui-avatars.com/api/?name=PS&background=00BCD4&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Necesito tu ayuda con algo',
-                send_by_me: false,
+                text: 'Pablo, el proyecto está casi listo',
+                send_by_me: true,
                 created_at: '2024-06-02T11:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Claro, ¿qué necesitas?',
-                send_by_me: true,
+                text: 'Excelente noticia! ¿Para cuándo?',
+                send_by_me: false,
                 created_at: '2024-06-02T11:05:00Z',
                 is_read: true
             },
             {
                 id: 3,
-                text: 'Es sobre el tema que conversamos el otro día',
-                send_by_me: false,
+                text: 'Para el próximo lunes como mucho',
+                send_by_me: true,
                 created_at: '2024-06-02T11:10:00Z',
                 is_read: true
             }
@@ -218,20 +300,32 @@ const contacts = [
         phone: '1189012306',
         email: 'valentina.perez@example.com',
         last_connection: 'Hace 1 hora',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Valentina',
+        profile_picture: 'https://ui-avatars.com/api/?name=VP&background=FFEB3B&color=000000&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'También estoy interesada en el proyecto!',
-                send_by_me: false,
+                text: 'Hola Valen! Cómo estás?',
+                send_by_me: true,
                 created_at: '2024-06-02T14:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Genial! Te mando los detalles',
-                send_by_me: true,
+                text: 'Hola! Muy bien, ¿y vos?',
+                send_by_me: false,
                 created_at: '2024-06-02T14:05:00Z',
+                is_read: true
+            },
+            {
+                id: 3,
+                text: 'Bien! Nos vemos en la reunión?',
+                send_by_me: true,
+                created_at: '2024-06-02T14:10:00Z',
                 is_read: true
             }
         ]
@@ -242,25 +336,30 @@ const contacts = [
         phone: '1190123407',
         email: 'javier.morales@example.com',
         last_connection: 'Hace 6 horas',
-        profile_picture: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Javier',
+        profile_picture: 'https://ui-avatars.com/api/?name=JM&background=8BC34A&color=ffffff&size=200',
+        is_pinned: false,
+        is_muted: false,
+        is_blocked: false,
+        highlighted_messages: [],
+        media: [],
         messages: [
             {
                 id: 1,
-                text: 'Che, ¿cómo andas?',
+                text: 'Che, ¿me das tu número de teléfono?',
                 send_by_me: true,
                 created_at: '2024-06-02T09:00:00Z',
                 is_read: true
             },
             {
                 id: 2,
-                text: 'Todo bien! Vos?',
+                text: 'Claro! Es 11 xxxx xxxx, ¿y el tuyo?',
                 send_by_me: false,
                 created_at: '2024-06-02T09:05:00Z',
                 is_read: true
             },
             {
                 id: 3,
-                text: 'De lujo, me alegra saber de vos!',
+                text: 'Perfecto, te llamo después entonces',
                 send_by_me: true,
                 created_at: '2024-06-02T09:10:00Z',
                 is_read: true
