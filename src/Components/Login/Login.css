@@ -7,6 +7,8 @@
     flex-shrink: 0;
     border-radius: 12px;
     overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
 }
 
 /* Sidebar de perfil (a la izquierda) */
@@ -85,6 +87,7 @@
 .settings-btn:hover {
     color: #25D366;
 }
+
 /* Sidebar tipo WhatsApp */
 .whatsapp-sidebar {
     width: 320px;
@@ -103,57 +106,89 @@
     flex: 1 1 auto;
 }
 
-.profile-section {
-    position: relative;
-    width: 100%;
-    margin-bottom: 32px;
-    padding-bottom: 8px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    justify-content: flex-start;
-    flex-shrink: 0;
-}
 .contact-list {
     width: 100%;
     flex: 1 1 auto;
     overflow-y: auto;
-    max-height: calc(100vh - 180px); /* Ajusta según el alto de profile-section */
+    max-height: calc(100vh - 180px);
     min-height: 0;
     padding-bottom: 16px;
     box-sizing: border-box;
 }
 
-.profile-pic {
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid #25D366;
+/* Media Queries para Sidebars */
+
+@media (max-width: 1024px) {
+    .sidebars-container {
+        max-width: 95%;
+    }
+
+    .profile-sidebar {
+        width: 80px;
+        min-width: 60px;
+    }
+
+    .whatsapp-sidebar {
+        width: 280px;
+        min-width: 220px;
+    }
 }
 
-.profile-name {
-    font-size: 18px;
-    font-weight: 600;
-    color: #222;
-}
+@media (max-width: 768px) {
+    .sidebars-container {
+        max-width: 100%;
+        border-radius: 0;
+        flex-direction: row;
+    }
 
-.profile-status {
-    font-size: 14px;
-    color: #666;
-}
+    .profile-sidebar {
+        height: 140px;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        flex-direction: row;
+        border-right: 1px solid #d1d7db;
+        border-bottom: 1px solid #d1d7db;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 12px 16px;
+        gap: 16px;
+    }
 
-.settings-btn {
-    background: none;
-    border: none;
-    font-size: 22px;
-    cursor: pointer;
-    color: #555;
-    transition: color 0.2s;
-}
-.settings-btn:hover {
-    color: #25D366;
+    .profile-section {
+        flex-direction: row;
+        gap: 12px;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .profile-pic {
+        width: 56px;
+        height: 56px;
+    }
+
+    .profile-name {
+        font-size: 14px;
+        text-align: left;
+        max-width: 80px;
+    }
+
+    .profile-status {
+        font-size: 12px;
+    }
+
+    .profile-settings-bottom {
+        margin-left: auto;
+        padding: 0;
+    }
+
+    .whatsapp-sidebar {
+        display: none;
+    }
+
+    .contact-list {
+        max-height: 100%;
+    }
 }
 /* WhatsApp Login Styles */
 
@@ -411,6 +446,162 @@
     .whatsapp-btn {
         padding: 12px 20px;
         font-size: 14px;
+    }
+
+    /* Sidebars responsive para 480px */
+    .profile-sidebar {
+        height: 130px;
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .profile-pic {
+        width: 48px;
+        height: 48px;
+    }
+
+    .profile-name {
+        font-size: 11px;
+    }
+
+    .profile-status {
+        font-size: 10px;
+    }
+
+    .settings-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+}
+
+/* Ultra responsive para pantallas muy pequeñas (400px y menos) */
+@media (max-width: 400px) {
+    .whatsapp-login-container {
+        padding: 12px;
+    }
+
+    .whatsapp-login-box {
+        padding: 20px 12px;
+        border-radius: 6px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .whatsapp-logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+    .whatsapp-logo-section {
+        margin-bottom: 24px;
+    }
+
+    .whatsapp-logo-section h1 {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .whatsapp-logo-section .subtitle {
+        font-size: 12px;
+    }
+
+    .whatsapp-form {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .form-group {
+        margin: 0;
+    }
+
+    .whatsapp-input {
+        font-size: 15px;
+        padding: 10px 12px;
+        border-radius: 6px;
+    }
+
+    .whatsapp-input::placeholder {
+        font-size: 14px;
+    }
+
+    .whatsapp-btn {
+        padding: 10px 16px;
+        font-size: 13px;
+        margin-top: 4px;
+    }
+
+    .error-message {
+        font-size: 11px;
+        margin-top: 4px;
+    }
+
+    .whatsapp-footer {
+        padding-top: 12px;
+        border-top: 1px solid #e5e5e5;
+    }
+
+    .whatsapp-footer p {
+        font-size: 11px;
+    }
+
+    /* Sidebars responsive para 400px */
+    .sidebars-container {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+    }
+
+    .profile-sidebar {
+        height: 110px;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        padding: 8px 10px;
+        gap: 8px;
+        border-radius: 0;
+    }
+
+    .profile-section {
+        gap: 8px;
+        min-width: 0;
+    }
+
+    .profile-pic {
+        width: 44px;
+        height: 44px;
+        flex-shrink: 0;
+    }
+
+    .profile-name {
+        font-size: 10px;
+        max-width: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .profile-status {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .profile-settings-bottom {
+        padding: 0 8px;
+    }
+
+    .settings-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .whatsapp-sidebar {
+        display: none;
     }
 }
 
